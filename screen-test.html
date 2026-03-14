@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ეკრანის მოდელატორი - ვებსაიტის ნახვა სხვადასხვა მოწყობილობაზე</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ეკრანის მოდელატორი</h1>
+            <p class="description">შეამოწმეთ თქვენი ვებსაიტის გამოსახულება სხვადასხვა მოწყობილობის ეკრანებზე</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <input type="url" id="url-input" placeholder="შეიყვანეთ ვებსაიტის URL (მაგ: https://example.com)" />
+                <button id="load-btn">ჩატვირთვა</button>
+            </div>
+            
+            <div class="device-selection">
+                <div class="device-btn active" data-width="375" data-height="667">iPhone 12</div>
+                <div class="device-btn" data-width="414" data-height="896">iPhone 11 Pro</div>
+                <div class="device-btn" data-width="768" data-height="1024">iPad</div>
+                <div class="device-btn" data-width="820" data-height="1180">Surface Duo</div>
+                <div class="device-btn" data-width="1024" data-height="768">ნეტბუქი</div>
+                <div class="device-btn" data-width="1280" data-height="720">ლეპტოპი</div>
+                <div class="device-btn" data-width="1920" data-height="1080">დესკტოპი FHD</div>
+                <div class="device-btn" data-width="2560" data-height="1440">დესკტოპი QHD</div>
+            </div>
+        </div>
+        
+        <div class="preview-section">
+            <div class="device-container">
+                <div class="device-frame" id="device-frame">
+                    <div class="scale-info" id="scale-info">მასშტაბი: 100%</div>
+                    <div class="device-screen" id="device-screen">
+                        <div class="loading" id="loading">
+                            <div class="spinner"></div>
+                            <p>ვებსაიტი იტვირთება...</p>
+                        </div>
+                        <iframe id="site-frame" sandbox="allow-same-origin allow-scripts"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="custom-size">
+                <div class="size-input">
+                    <label for="width-input">სიგანე (px):</label>
+                    <input type="number" id="width-input" min="100" max="5000" value="375" />
+                </div>
+                <div class="size-input">
+                    <label for="height-input">სიმაღლე (px):</label>
+                    <input type="number" id="height-input" min="100" max="5000" value="667" />
+                </div>
+                <button id="apply-size">ზომის გამოყენება</button>
+                <button id="reset-view" style="background: #6c757d;">მასშტაბის რესეტი</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>ეს ინსტრუმენტი საშუალებას გაძლევთ ნახოთ თქვენი ვებსაიტი სხვადასხვა მოწყობილობის ეკრანებზე, მათ შორის დიდ ეკრანებზეც.</p>
+        </footer>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
